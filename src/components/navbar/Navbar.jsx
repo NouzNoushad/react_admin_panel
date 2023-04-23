@@ -1,7 +1,12 @@
 import { ChatBubbleOutline, ChatBubbleOutlineOutlined, DarkModeOutlined, FullscreenExitOutlined, LanguageOutlined, ListOutlined, NotificationsNone, SearchOutlined } from "@mui/icons-material";
 import './navbar.scss'
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Navbar = () => {
+
+	const { dispatch } = useContext(DarkModeContext)
+	
 	return ( 
 		<div className="navbar">
 			<div className="wrapper">
@@ -15,7 +20,7 @@ const Navbar = () => {
 						English
 					</div>
 					<div className="item">
-						<DarkModeOutlined className="icon"/>
+						<DarkModeOutlined className="icon" onClick={() => dispatch({type: 'TOGGLE'})}/>
 					
 					</div>
 					<div className="item">
@@ -35,7 +40,7 @@ const Navbar = () => {
 						
 					</div>
 					<div className="item">
-						<img src="./mickey_mouse.jpg" alt="" className="avatar"/>
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-_E5SXeGbkl6KCd75k3KRaJVknWJ0xlNEJA9p2Nz9_w&usqp=CAU&ec=48600113" alt="" className="avatar"/>
 					</div>
 				</div>
 			</div>
